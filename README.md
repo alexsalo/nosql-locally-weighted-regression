@@ -3,6 +3,7 @@
 In this document we provide a brief discussion on the LWR algorithm and somewhat detailed description on how to run our code using each tool on the provided VirtualBox vm (code is available on [project's github](https://github.com/alexsalo/nosql-locally-weighted-regression)).
 
 Document structure:
+
 1. [Locally Weighted Linear Regression](#lwr)
     - [Algorithm Discussion](#lwr-discussion)
     - [Performance Analysis and Parallelization Options](#lwr-performance)

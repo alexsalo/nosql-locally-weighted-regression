@@ -1,0 +1,7 @@
+aux/
+hadoop-2.7.2/
+apache-hive-2.0.0-bin/
+spark-1.6.1-bin-without-hadoop/
+*.pyc
+output*
+*.*~

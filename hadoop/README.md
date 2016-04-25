@@ -1,3 +1,9 @@
+##Implementation tools
+###Hadoop + MapReduce
+Hadoop ecosystem (version 2.7.2 used) comes with HDFS file system and MapReduce framework for writing apps to process vast amounts of data in parallel on many nodes (machines).
+
+To use MR one can either implement abstract map and reduce clases in Java or take advantage of Hadoop Streaming api, which is a utility allowing to run any executable as Mapper/Reducer. Essentially, Hadoop Streaming facilitates passing data between our Map and Reduce phases via STDIN and STDOUT. Since we are using Python, to read &lt;key, value> pair we simply read from sys.stdin; to emit &lt;key, value> pair we write (print) to sys.stdout. Hadoop Streaming takes care of the rest.
+
 # Locally Weighted Linear Regression with MapReduce on Hadoop HDFS via Streaming API
 Hadoop Streaming API allows to run any executable files as mappers and reducers in MapReduce framework. We are using Python to implement locally weighted linear regression algorithm. Our implementation contains the following files:
 
@@ -171,7 +177,7 @@ $ hadoop-2.7.2/bin/hdfs dfs -cat /user/root/output/* | /nosql/hadoop/py_lwr_subg
 ```
 
 This should produce a picture like that:
-![Demo](demo_lwr.png)
+![Demo](lwr_demo.png)
 
 To finish up - shut down the daemons:
 ```shell

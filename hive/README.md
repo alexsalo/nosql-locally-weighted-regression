@@ -23,21 +23,17 @@ To solve that issue we turn to Spark SQL. To quote their web site:
 
 *Thus we can use Spark SQL framework to use and **query our convenient Hive warehouse** using familiar DataFrame API, and **do it in Python***.
 
-### Setting Up PATH
-I set up a PATH variable to contain all the home directories. I put that into */root/.bash_rc* by including *.bash_nosql_exports* file with the following content:
+
+
+### Loading Data into Hive
 ```shell
-export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
-export HADOOP_HOME=/nosql/hadoop/hadoop-2.7.2
-export SPARK_HOME=/nosql/spark/spark-1.6.1-bin-without-hadoop
-export HIVE_HOME=/nosql/hive/apache-hive-2.0.0-bin
-export PATH=$HIVE_HOME/bin:$HADOOP_HOME/bin:$SPARK_HOME/bin:$PATH
-```
-Thus now we can simply run all the commands related to Hadoop, Spark or Hive from anywhere under the root user. Since we will need to relate to HDFS when using Hive this would prove convenient i.e.:
-```shell
+$ $HADOOP_HOME/bin/hadoop fs -mkdir       /tmp
+$ $HADOOP_HOME/bin/hadoop fs -mkdir       /user/hive/warehouse
+$ $HADOOP_HOME/bin/hadoop fs -chmod g+w   /tmp
+$ $HADOOP_HOME/bin/hadoop fs -chmod g+w   /user/hive/warehouse
 $ hdfs dfs -chmod g+w /user/hive/warehouse  # give privileges to hive's warehouse directory
 ```
 
-### Loading Data into Hive
 All the following commands are issued from the *hive* working directory on the virtual machine under root privileges:
 ```shell
 $ sudo su           # password: bigdata

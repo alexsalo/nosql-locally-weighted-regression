@@ -20,7 +20,7 @@ Often, when working with real data, we realize that our data doesn't really lie 
 
 To address these issues we want to implement Locally Weighted [Linear] Regression (LWR), which, assuming sufficient size of the training set, makes the choice of features much less critical. Additionally, LWR is a lazy learning approach and allows us learn on the newly obtained data. Given the goal of Big Data analytics, we definitely want to make use of all the data, yet we are concerned with the computational efficiency. Thus we would like to use NoSQL tools to implement LWR. Now let us briefly discuss the math behind the LWR algorithm, evaluate its time complexity  and find possibilities for optimization via parallelization.
 
-### Algorithm Discussion <a id="lwr-discussion"></a>
+### <a id="lwr-discussion"></a> Algorithm Discussion 
 To understand Locally Weighted linear Regression (LWR) let us consider a simple linear regression (LR) first. As an input we have N-dimensional dataset X with M examples (each example has N features) and 1-dimensional vector Y with targets. The goal of LR is to fit the line that would map X -> Y at the minimized OLS sum. Such line would allows us to predict y-value for any x-input.
 ```shell
 m  | X (features)  | Y (targets)  

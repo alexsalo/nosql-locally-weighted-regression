@@ -1,6 +1,8 @@
 
 copy paste problems with hive and why sparksql then
 
+Suppose we receive daily data from our business client in json format, which sounds very reasonable
+
 ### Querying Hive from Spark
 Also possible to query Hive directly after building Spark with related flags (Hive support leads to increase in the number of external dependencies). Let us, however, test another feature of Spark SQL: inferring JSON format by reflection and automatic conversion of JSON to an SQL-like table. Then we can query that table and calculate LWR.
 
@@ -27,6 +29,8 @@ ethodAccessorImpl.java:-2, took 0.779797 s
 
 spark-submit --master local[4] sparksql-lwr.py
 
+
+While json reflection is super useful it doesn't appear to be robust (I failed to parse my Google takeout data)
 
 # Summary
 To summarize, calculatig LWR in SQL worlds appears to be a bad idea. The whole point of SQL is to allow to run 'mainstream' queries on data, while LWR requires us to write a custom script thus we don't really take advantage of SparkSQL, which renders pure Spark a better fit for the problem.

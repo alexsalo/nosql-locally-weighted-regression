@@ -86,7 +86,7 @@ Which produces the hypothesis that we were looking for:
 ```
 
 #### <a id="hadoop-single"></a> 2. Hadoop single node without HDFS
-*--You can skip this part if you are not developing new functionality--*
+*-You can skip this part if you are not developing new functionality-*
 
 First, make sure single node mode is activated. Edit the following two files and leave empty configuration tags:
 ```shell
@@ -211,7 +211,7 @@ $ hdfs dfs -cat /user/root/mapreduce_output/* | /nosql/hadoop/lwr_plot_x_query.p
 ```
 
 This should produce a picture like that:
-<img src="lwr_demo.png" alt="Demo" style="width: 800px;"/>
+![Demo](lwr_demo.png)
 
 To finish up - shut down the daemons:
 ```shell

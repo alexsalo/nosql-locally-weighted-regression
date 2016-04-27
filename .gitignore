@@ -9,3 +9,4 @@ derby*
 metastore_db*
 *.html
 *.pdf
+input_large_files/

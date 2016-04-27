@@ -76,9 +76,9 @@ The time complexity of a single core LWR is given by O(mn<sup>2</sup>) to comput
 On our LWR (no parallelization of the matrix inverse), P cores gives us total of O(mn<sup>2</sup>/P + n<sup>3</sup>), plus some communication cost. Given our assumption m>>n we can drop the n term and estimate the time complexity as O(m/P), and expect that, in theory, LWR should perform linearly faster with the increase in the number of cores.
 
 
-## <a id="hadoop-overview"></a> 3. Hadoop Ecosystem Overview
-### Hadoop Ecosystem Overview
+## <a id="hadoop-overview"></a> 2. Hadoop Ecosystem Overview
 How do we set about to implement LWR in NoSQL world? We want something robust, open source and easy to work with. Luckily, there is just such a thing:
+
 > The Apache Hadoop software library is a framework that allows for the distributed processing of large data sets across clusters of computers using simple programming models.
 
 Hadoop consists of two main things: a *Distributed File System (HDFS)* and computational framework *MapReduce*. HDFS provides us with fault tolerant distributed file storage system that provides high-throughput access to application data. MapReduce allows easy parallel processing of large data sets. There are also a *Hadoop Common* utilities used by other tools within Hadoop Ecosystem, and YARN - framework for job scheduling and cluster resource management, which is not going to play a critical role in our implementations.
@@ -114,7 +114,7 @@ Finally, we can run SparkSQL on top of everything: over HDFS files or Hive table
 In other words, with SparkSQL we can combine all the benefits of either HDFS, MapRecude, HIVE and Spark under unified workspace and using desirable Python.
 
 
-## <a id="os-setup"></a> 2. Setting Up OS Env
+## <a id="os-setup"></a> 3. Setting Up OS Env
 You can skip this section if you are simply executing files on provided VM (come back if you see any suspicious exceptions). Here we highlight the basic OS environment setup that will ease our work with NoSQL tools. All the tools, in the latest stable version as of 25 April 2016, were downloaded from official Apache servers and unpacked into */nosql/<toolname>* folder. Along with that, */nosql/* folder contains an *input/* folder with our input data. Below is a short description of the project folder structure:
 ```shell
 $ sudo su    # password: bigdata

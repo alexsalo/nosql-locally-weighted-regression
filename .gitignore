@@ -7,3 +7,5 @@ output*
 *.*~
 derby*
 metastore_db*
+*.html
+*.pdf

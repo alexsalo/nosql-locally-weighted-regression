@@ -28,7 +28,7 @@ hdfsFile.count()
 # 5488
 ```
 
-The major benefit of Spark over plain MapReduce is that it provides an consolidated API in Java, Scala or Python. From the ![Spark Programming Guide](http://spark.apache.org/docs/latest/programming-guide.html)
+The major benefit of Spark over plain MapReduce is that it provides an consolidated API in Java, Scala or Python. From the [Spark Programming Guide](http://spark.apache.org/docs/latest/programming-guide.html)
 > For example, map is a transformation that passes each dataset element through a function and returns a new RDD representing the results. On the other hand, reduce is an action that aggregates all the elements of the RDD using some function and returns the final result to the driver program.
 
 That means we still use the same idea of mapper and reducer here. However the benefit is, to quote the official site again:

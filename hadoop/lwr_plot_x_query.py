@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 '''
 This script plots a demo of LWR prediction
-Run example: cat output/* | /nosql/hadoop/py_lwr_subgroups_sums/plot_x_query.py
+Run example: hdfs dfs -cat /user/root/mapreduce_output/* | /nosql/hadoop/lwr_plot_x_query.py
 '''
 import sys
 from np_matrix_helpers import str2mat
@@ -41,7 +41,7 @@ def plot_x_query(lwr_theta):
     print 'Welcome to the plot demo!\n================================\n Locally weighted regression: lwr_theta for an x_query:\n%s' % lwr_theta
 
     # Read data to make a scatter plot and LR fit
-    x, y = read_data('/nosql/hadoop/py_lwr_subgroups_sums/input/x_data.txt')
+    x, y = read_data('/nosql/input/x_data.txt')
     x_2dim = x[:, [0, COLUMN_NUMBER]]  # because we can't plot more than two dimensions
     theta = batch_linear_regression(x_2dim, y)
     print 'Simple liner regression produce the following theta for the regression line:\n%s' % theta
@@ -56,7 +56,7 @@ def plot_x_query(lwr_theta):
 
     # Predict outcome for x_query
     y_query = x_query * lwr_theta
-    print 'Given the x_query: %s, LWR predicts target: %s' % (x_query, y_query)
+    print 'Given the x_query: %s\nLWR predicts target: %s' % (x_query, y_query)
     plt.plot(x_query[:, COLUMN_NUMBER], y_query, 'go', markersize=10,
             label='Locally Wheighted Linear Regression x_query Prediction')
 

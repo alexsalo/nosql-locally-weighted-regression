@@ -5,3 +5,5 @@ spark-1.6.1-bin-without-hadoop/
 *.pyc
 output*
 *.*~
+derby*
+metastore_db*

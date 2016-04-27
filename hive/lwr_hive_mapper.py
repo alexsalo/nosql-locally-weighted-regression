@@ -25,8 +25,8 @@ def mat2str(mat):
 
 a, b = None, None
 for line in sys.stdin:
-    # (IMPORTANT) note this change to internal Hive's delimiter
-    values = line.strip().split('\t')
+    # parse values assuming x1 x2 x3 ... y
+    values = line.strip().split('\t')  # (!) change to internal Hive's delimiter
     x = np.matrix([1.0] + [float(val) for val in values[:-1]])
     y = np.matrix([float(values[-1])])
 

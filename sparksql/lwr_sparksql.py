@@ -9,7 +9,7 @@ C = 0.5  # regularization parameter - bias & variance trade-off
 x_query = np.matrix([1, -5.6, 9.1566, -2.0867])
 
 # this time we will read local file
-filename = '/user/root/input_json/data_x.json'
+filename = '/user/root/data_x.json'
 sc = SparkContext('local', 'spark sql app')
 
 sqlContext = SQLContext(sc)
@@ -32,8 +32,8 @@ def mapAb(row):
         d_sq = d * d.T
         return np.exp(d_sq / (-2.0 * c**2))
 
-    # how would we know how may columns are there in the row?
-    n = len(row) #TODO
+    # parse values from the row assuming x1 x2 x3 ... y
+    n = len(row)
     x = np.matrix([1.0] + [row['x%s' % i] for i in xrange(n - 1)])
     y = np.matrix([row['x%s' % (n - 1)]])
 

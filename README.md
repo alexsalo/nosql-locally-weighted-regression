@@ -288,7 +288,7 @@ Which produces the hypothesis that we were looking for:
 ```
 
 #### <a id="hadoop-single"></a> 2. Hadoop single node without HDFS
-*\*You can skip this part if you are not developing new functionality.\**
+*--You can skip this part if you are not developing new functionality--*
 
 First, make sure single node mode is activated. Edit the following two files and leave empty configuration tags:
 ```shell
@@ -557,7 +557,8 @@ Now we can create a table (stored in HDFS) in Hive that will suit our data_x.txt
 $ beeline -u jdbc:hive2://  # connect to Hive
 
 # 0: jdbc:hive2://>
-CREATE TABLE lwr_data (x1 DOUBLE, x2 DOUBLE, x3 DOUBLE, x4 DOUBLE) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',';
+CREATE TABLE lwr_data (x1 DOUBLE, x2 DOUBLE, x3 DOUBLE, x4 DOUBLE)
+  ROW FORMAT DELIMITED FIELDS TERMINATED BY ',';
 SHOW TABLES;
 # +-----------+--+
 # | tab_name  |

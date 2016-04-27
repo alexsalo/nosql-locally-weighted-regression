@@ -32,7 +32,8 @@ Now we can create a table (stored in HDFS) in Hive that will suit our data_x.txt
 $ beeline -u jdbc:hive2://  # connect to Hive
 
 # 0: jdbc:hive2://>
-CREATE TABLE lwr_data (x1 DOUBLE, x2 DOUBLE, x3 DOUBLE, x4 DOUBLE) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',';
+CREATE TABLE lwr_data (x1 DOUBLE, x2 DOUBLE, x3 DOUBLE, x4 DOUBLE)
+  ROW FORMAT DELIMITED FIELDS TERMINATED BY ',';
 SHOW TABLES;
 # +-----------+--+
 # | tab_name  |

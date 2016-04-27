@@ -86,7 +86,7 @@ Which produces the hypothesis that we were looking for:
 ```
 
 #### <a id="hadoop-single"></a> 2. Hadoop single node without HDFS
-*\*You can skip this part if you are not developing new functionality.\**
+*--You can skip this part if you are not developing new functionality--*
 
 First, make sure single node mode is activated. Edit the following two files and leave empty configuration tags:
 ```shell

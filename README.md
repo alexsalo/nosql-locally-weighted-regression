@@ -31,7 +31,7 @@ m  | X (features)  | Y (targets)
 M: |1 x0 x1 x2 ... xn| y
 ```
 Note that we appended X to a columns of ones - resulting matrix is called a *design matrix* - it allows us to find the intercept of the line. To construct that line (or, more generally, a hyperplane in N-dimensional space) we find the best hypothesis **theta** (which is a vector [size N] of coefficients for each dimension of X) by solving the following normal equation:
-<div style="text-align:center">X'X&theta;=X'Y</div>
+<p align="center">X'X&theta;=X'Y</p>
 
 The closed form solution then:
 <center>&theta;=inv(X'X)X'Y</center>

@@ -34,7 +34,7 @@ Note that we appended X to a columns of ones - resulting matrix is called a *des
 <p align="center">X'X&theta;=X'Y</p>
 
 The closed form solution then:
-<center>&theta;=inv(X'X)X'Y</center>
+<p align="center">&theta;=inv(X'X)X'Y</p>
 
 This solution gives the intercept and slopes (hypothesis &theta;) for the line in each X's dimension. The LWR goes a step further and locally adjusts the line according to the proximity to other data points - the closer the point the more weight it has.
 
@@ -43,7 +43,7 @@ That is a good time to introduce one simple yet not very intuitive feature of LW
 In the LWR, since our predictions are no longer linear, but adjusted by the neighboring points, *for each x-point we want to predict (we would call it query point), we need to calculate its own hypothesis &theta;*. For each such query point we consider all other points available, but their influence is weighted by the distance to our query point. That is a LWR in a nutshell. Let us now see how it translates into linear algebra.
 
 In fact, all we need to change for LWR is to add a weight matrix W (diagonal matrix of size m x m), and solve the analogous normal equation as:
-<center>&theta;=inv(X'WX)X'WY</center>
+<p align="center">&theta;=inv(X'WX)X'WY</p>
 
 Finally, note that we use a Gaussian Kernel as our distance function. We use bandwidth parameter *C=0.5* throughout this project. The choice of the bandwidth could be optimized and found automatically, but that does not change anything in our area of interest.
 
@@ -53,7 +53,7 @@ Just how fast LWR works? Should we even care to parallelize? The answer is yes -
 One obvious way to parallelize LWR is when we want to calculate the prediction for several query points. In that case we simply split the set of Q query points between the P cored and we are done ~Q/P times faster. Implementing this trivial solution is rather straightforward so we would not consider it. Instead we would be concerned in how can we *parallelize the computations for a single query point*.
 
 Recall that in order to find a hypothesis &theta; for a single query point over the set of training examples we need to solve the following normal equation:
-<center>A&theta;=B</center>
+<p align="center">A&theta;=B</p>
 Where:
 
 ```shell

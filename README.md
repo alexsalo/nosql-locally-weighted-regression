@@ -23,7 +23,7 @@ To address these issues we want to implement Locally Weighted [Linear] Regressio
 ### <a id="lwr-discussion"></a> Algorithm Discussion
 To understand Locally Weighted linear Regression (LWR) let us consider a simple linear regression (LR) first. As an input we have N-dimensional dataset X with M examples (each example has N features) and 1-dimensional vector Y with targets. The goal of LR is to fit the line that would map X -> Y at the minimized OLS sum. Such line would allows us to predict y-value for any x-input.
 ```shell
-m  | X (features)  | Y (targets)  
+m  | X (features)    | Y (targets)  
 --------------------------------
 1: |1 x0 x1 x2 ... xn| y
 2: |1 x0 x1 x2 ... xn| y

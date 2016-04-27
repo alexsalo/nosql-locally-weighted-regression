@@ -211,7 +211,7 @@ $ hdfs dfs -cat /user/root/mapreduce_output/* | /nosql/hadoop/lwr_plot_x_query.p
 ```
 
 This should produce a picture like that:
-![Demo](lwr_demo.png)
+![Demo](./../lwr_demo.png)
 
 To finish up - shut down the daemons:
 ```shell
